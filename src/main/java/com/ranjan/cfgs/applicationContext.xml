@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 	<!-- Spring bean configuration -->
+ 	<!-- Dependent class  configuration spring bean -->
+ 	<bean id="dt" class="java.util.Date"/>  <!-- loads Data class and creates obj dt -->
+ 
+ 	<!-- Using both setter and constructor injection -->
+ 	<!-- <bean id="dt1" class="java.util.Date">
+ 		<property name="year" value="120"/> add 1900 to whatever we give here
+ 		<property name="month" value="7"/>
+ 		<property name="date" value="15"/>
+ 	</bean> -->
+ 	<!-- Target class configuration spring bean -->
+ 	<bean id="wmg" class="java.lang.WishMessageGenerator">
+ 		<constructor-arg name="date" ref="dt"/> <!-- for constructor injection -->
+ 		<!-- <property name="date" ref="dt1"/> --><!-- for setter injection -->
+ 	</bean>
+ 
+ </beans>         
